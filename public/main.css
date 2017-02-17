@@ -1,4 +1,13 @@
 #main-map{
-  width: 800px;
-  height: 700px;
+  width: 500px;
+  height: 500px;
+}
+
+#weather-info{
+  display: inline-block;
+}
+
+img{
+  width: 200px;
+  height: 120px;
 }
