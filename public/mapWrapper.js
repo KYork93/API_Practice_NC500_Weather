@@ -23,9 +23,9 @@ MapWrapper.prototype = {
     window.setPosition(marker.position);
     google.maps.event.addListener(marker, 'click', function(){
       if(marker.position === info.johnogroats){
-        window.setContent('<p>The furthest point of the British Isles</p> \n <button onclick="wickCheck()" id="john-weather">Check Weather</button>');
+        window.setContent('<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/John_O%27Groats_from_the_air.jpg/639px-John_O%27Groats_from_the_air.jpg"><p>The furthest point of the British Isles</p> \n <button onclick="wickCheck()" id="john-weather">Check Weather</button>');
       } else if (marker.position === info.tongue){
-        window.setContent('<p>From here you can access Ben Hope</p> \n <button onclick="tongueCheck()" id="tongue-weather">Check Weather</button>')
+        window.setContent('<img src="https://upload.wikimedia.org/wikipedia/commons/7/77/The_view_across_Loch_Eriboll_to_Ben_Hope_-_geograph.org.uk_-_234948.jpg"><p>From here you can access Ben Hope</p> \n <button onclick="tongueCheck()" id="tongue-weather">Check Weather</button>')
       } else if (marker.position === info.ullapool){
         window.setContent('<img src="http://sealochhouse.co.uk/admin/assets/img/45fb6fef56.jpg"><p>You can catch a ferry from here to get to the beautiful Isle of Skye</p> \n <button onclick="ullapoolCheck()" id="ullapool-weather">Check Weather</button>')
       } else if (marker.position === info.applecross){
