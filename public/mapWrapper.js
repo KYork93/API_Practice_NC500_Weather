@@ -20,7 +20,7 @@ MapWrapper.prototype = {
       maxWidth: 200
     })
     window.setPosition(marker.position);
-    google.maps.event.addListener(this.googleMap, 'click', function(){
+    google.maps.event.addListener(marker, 'click', function(){
       window.open(this.googleMap, marker);
     })
   }
