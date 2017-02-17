@@ -1,8 +1,5 @@
-// var info = require('../db/infoBase.js');
 
 var info = new InfoBase();
-
-// console.log(infoBase);
 
 var waypointDirections = {
     origin: 'Inverness, UK',
@@ -11,17 +8,41 @@ var waypointDirections = {
     travelMode: 'DRIVING'
 }
 
-var addMarkers = function(map){
-  map.addMarker("This is the northern most point of the British Isle", info.johnogroats);
-  map.addMarker("From here you can travel to Ben Hope, one of the many Munros", info.tongue);
-  map.addMarker("Get a ferry from here to explore the Isle of Sky", info.ullapool);
-  map.addMarker("There is a renowned gastropub here, a must visit", info.applecross);
-  map.addMarker("Dunrobin Castle is a famous attraction here", info.dunrobinCastle);
+var makeRequest = function(url, callback){
+  var request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = callback;
+  request.send();
+}
 
+var townCheck = function(){
+  url = "http://api.openweathermap.org/data/2.5/weather?q=Ullapool&appid=f11f81a722d1ac771c8388873825eb11";
+
+  makeRequest(url, displayWeather);
+}
+
+var displayWeather = function(){
+  if(this.status != 200) return;
+  var dataObject = JSON.parse(this.responseText);
+
+  var div = document.querySelector('#weather-info')
+  var p = document.createElement('p');
+  console.log(dataObject);
+  dataObject.forEach(function(property){
+    p.appendChild(property.weather.main);
+  })
+  div.appendChild(p);
+}
+
+var addMarkers = function(map){
+  map.addMarker(info.johnogroats);
+  map.addMarker(info.tongue);
+  map.addMarker(info.ullapool);
+  map.addMarker(info.applecross);
+  map.addMarker(info.dunrobinCastle);
 }
 
 var initialize = function(){
-  // var info = new InfoBase;
   var markerDisplay = new google.maps.InfoWindow;
   var ncRoute = new google.maps.DirectionsService();
   var renderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
@@ -36,6 +57,7 @@ var initialize = function(){
       renderer.setDirections(response)
     }
   })
+  displayWeather;
 }
 
 window.onload = initialize;
