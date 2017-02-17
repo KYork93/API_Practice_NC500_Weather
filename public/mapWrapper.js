@@ -32,8 +32,9 @@ MapWrapper.prototype = {
         window.setContent('<img src="http://www.whatson-north.co.uk/imagelibrary/Client_Images/Client00007/ResizeCache/01988000/01988922%20-%20450x248.jpg"><p>There is a well renowned gastropub here</p> \n <button onclick="appleCheck()" id="apple-weather">Check Weather</button>')
       } else if (marker.position === info.dunrobinCastle){
         window.setContent('<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Dunrobin_Castle_-Sutherland_-Scotland-26May2008_(2).jpg"><p>The castle here is features French Renaissance architecture</p> \n <button onclick="castleCheck()" id="castle-weather">Check Weather</button>')
+      } else if (marker.position === info.inverness){
+        window.setContent('<img src="http://www.flybe.com/cheap-flights/inverness/inverness-overview-16x9.jpg"><p>A growing city in Scotland, the start point and the end point</p> \n <button onclick="invernessCheck()" id="castle-weather">Check Weather</button>')
       }
-
 
       window.open(this.googleMap, marker);
     })

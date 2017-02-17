@@ -40,6 +40,11 @@ var tongueCheck = function(){
   makeRequest(url, displayWeather);
 }
 
+var invernessCheck = function(){
+  var url = "http://api.openweathermap.org/data/2.5/weather?q=inverness,uk&appid=f11f81a722d1ac771c8388873825eb11";
+  makeRequest(url, displayWeather);
+}
+
 var displayWeather = function(){
   if(this.status != 200) return;
   var jsonString = this.responseText;
@@ -64,6 +69,7 @@ var addMarkers = function(map){
   map.addMarker(info.ullapool);
   map.addMarker(info.applecross);
   map.addMarker(info.dunrobinCastle);
+  map.addMarker(info.inverness);
 }
 
 var initialize = function(){
@@ -81,9 +87,6 @@ var initialize = function(){
       renderer.setDirections(response)
     }
   })
-  // var button = document.querySelector('#check');
-  // button.onclick = townCheck;
-
 }
 
 window.onload = initialize;

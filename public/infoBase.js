@@ -10,4 +10,5 @@ var InfoBase = function(){
   this.ullapool =  new google.maps.LatLng(57.900, -5.166);
   this.applecross =  new google.maps.LatLng(57.416667, -5.816667);
   this.tongue =  new google.maps.LatLng(58.47629, -4.41719);
+  this.inverness = new google.maps.LatLng(57.477772, -4.224721);
 };
