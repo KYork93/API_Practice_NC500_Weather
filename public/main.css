@@ -5,14 +5,22 @@
 }
 
 #weather-info{
-  display: inline-block;
+  float: left;
 }
 
 div{
-  display: inline-block;
+  float: left;
 }
 
-img{
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#how-to{
+
+}
+
+#window-img{
   width: 200px;
   height: 120px;
 }
@@ -32,4 +40,9 @@ h2{
   margin: 0;
   font-family: 'Roboto', sans-serif;
   padding-left: 15px;
+}
+
+#weather-btn{
+  width: 15px;
+  height: 15px;
 }

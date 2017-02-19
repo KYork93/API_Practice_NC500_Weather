@@ -49,7 +49,6 @@ var displayWeather = function(){
   if(this.status != 200) return;
   var jsonString = this.responseText;
   var weather = JSON.parse(jsonString);
-
   var div = document.querySelector('#weather-info')
   var p = document.createElement('p');
   var li = document.createElement('li');
